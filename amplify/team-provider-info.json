@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-meeteramp-dev-201908-authRole",
+      "UnauthRoleArn": "arn:aws:iam::677712126081:role/amplify-meeteramp-dev-201908-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::677712126081:role/amplify-meeteramp-dev-201908-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-meeteramp-dev-201908-deployment",
+      "UnauthRoleName": "amplify-meeteramp-dev-201908-unauthRole",
+      "StackName": "amplify-meeteramp-dev-201908",
+      "StackId": "arn:aws:cloudformation:us-east-1:677712126081:stack/amplify-meeteramp-dev-201908/86e636a0-47e1-11eb-ab2c-12afb4d5f445",
+      "AmplifyAppId": "d37an490v8qdk9"
+    },
+    "categories": {
+      "function": {
+        "meeterampdd4ef305DefineAuthChallenge": {}
+      },
+      "auth": {
+        "meeterampd7e623b5": {},
+        "meeterampb0b10901": {},
+        "meeteramp2ef9fccb": {},
+        "meeteramp43e8f83f": {}
+      }
+    }
+  }
+}

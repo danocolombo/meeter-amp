@@ -1,0 +1,88 @@
+type Meeting @model {
+	id: ID!
+	client: Client
+	mtgDate: AWSDate!
+	title: String!
+	type: String!
+	facilitator: Person
+	supportRole: Person
+	worship: String
+	avContact: Person
+	attenandance: Int
+	newcomers: Int
+	donations: Float
+	meal: String
+	mealContact: Person
+	mealCnt: Int
+	cafeCoordinator: Person
+	cafeCnt: Int
+	greeterContact1: Person
+	greeterContact2: Person
+	resourceContact: Person
+	announcementContact: Person
+	closingContact: Person
+	securityContact: Person
+	setupContact: Person
+	cleaningContact: Person
+	transportationContact: Person
+	transportationCnt: Int
+	nurseryContact: Person
+	nurseryCnt: Int
+	childrenContact: Person
+	childrenCnt: Int
+	youthContact: Person
+	youthCnt: Int
+	groups: [Group] @connection(name: "MeetingGroups")
+	notes: String
+}
+type Group @model {
+	id: ID!
+	meeting: Meeting @connection(name: "MeetingGroups")
+	title: String!
+	gender: String!
+	location: String
+	attendance: Int
+	facilitator: Person
+	coFacilitator: Person
+	notes: String
+}
+type Person @model {
+	id: ID!
+	user: User @connection(name: "PersonUser")
+	firstName: String!
+	lastName: String
+	email: String
+	phone: String
+	shirt: String
+	services: [Service] @connection(name: "PersonServices")
+}
+type Service @model {
+	id: ID!
+	title: String!
+	description: String
+	person: Person @connection(name: "PersonServices")
+}
+type Client @model {
+	id: ID!
+	name: String!
+	acronym: String!
+	city: String
+	state: String
+	members: [Member] @connection(name: "ClientMembers")
+}
+type Member @model {
+	id: ID!
+	role: String!
+	status: String!
+	userID: User
+	client: Client @connection(name: "ClientMembers")
+}
+type User @model {
+	id: ID!
+	firstName: String
+	lastName: String
+	login: String
+	authID: String
+	personID: Person @connection(name: "PersonUser")
+	defaultClient: Client
+}
